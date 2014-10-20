@@ -1,13 +1,9 @@
 # 1. Merges the training and the test sets to create one data set.
-temp_train <- read.table("train/X_train.txt")
-temp_test <- read.table("test/X_test.txt")
-X <- rbind(temp_train, temp_test)
-temp_train <- read.table("train/subject_train.txt")
-temp_test <- read.table("test/subject_test.txt")
-Subject <- rbind(temp_train, temp_test)
-temp_train <- read.table("train/y_train.txt")
-temp_test <- read.table("test/y_test.txt")
-Y <- rbind(temp_train, temp_test)
+X <- rbind(read.table("train/X_train.txt"), read.table("test/X_test.txt"))
+
+Subject <- rbind(read.table("train/subject_train.txt"), read.table("test/subject_test.txt"))
+
+Y <- rbind(read.table("test/subject_test.txt"), read.table("test/y_test.txt"))
 
 
 # 2. Extracts only the measurements on the mean and standard deviation for each measurement.
